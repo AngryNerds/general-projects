@@ -1,0 +1,44 @@
+.physical {
+    width: 280px;
+    height: 160px;
+    background-color: maroon;
+    
+    position: absolute:
+    bottom: -200px;
+    right: -200px;
+    
+    animation: fall 5s;
+    -moz-animation: fall 5s; /* Firefox */
+    -webkit-animation: fall 5s; /* Safari and Chrome */
+    
+    animation-timing-function: linear;
+    -moz-animation-timing-function: linear;
+    -webkit-animation-timing-function: linear;
+}
+
+@keyframes fall
+{
+from { transform: scale(1,1); }
+to { transform: scale(0,0); }
+}
+
+@-moz-keyframes fall /* Firefox */
+{
+from {background: red;}
+to {background: yellow;}
+}
+
+@-webkit-keyframes fall /* Safari and Chrome */
+{
+0% {
+    -webkit-transform: scale(1,1) rotateY(0deg) rotateZ(0deg) rotateX(0deg);
+    right: 0px;
+    bottom: 0px;
+}
+
+100% {
+    -webkit-transform: scale(0,0) rotateY(220deg) rotateZ(130deg) rotateX(90deg);
+    right: 140px;
+    bottom: 140px;
+}
+}

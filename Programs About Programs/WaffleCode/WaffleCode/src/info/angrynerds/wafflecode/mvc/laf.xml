@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<synth>
+    <style id="basicStyle">
+    <font name="Verdana" size="16"/>
+    <state value="PRESSED">
+      <color value="WHITE" type="BACKGROUND"/>
+      <color value="BLACK" type="FOREGROUND"/>
+    </state>
+  </style>
+  <bind style="basicStyle" type="region" key="Button"/>
+</synth>

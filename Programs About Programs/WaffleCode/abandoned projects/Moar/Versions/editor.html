@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<title>WaffleCode Version Editor</title>
+
+</head>
+
+<body>
+    
+    <div id="versions>
+        
+    </div>
+        
+    <script type="text/javascript">    
+        var xmlhttp;
+        var txt;
+        if (window.XMLHttpRequest)
+        {// code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp = new XMLHttpRequest();
+        }
+        else
+        {// code for IE6, IE5
+        //xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        return;
+        }
+        
+        xmlhttp.onreadystatechange=function()
+        {
+            if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+            txt = "<table border='1'><tr><th>Version</th><th>What Changed</th></tr>";
+            xml = xmlhttp.responseXML.documentElement;
+            
+            versions = xml.getElementsByTagName("version");    
+            for( var i = 0; i < versions.length; i++) {
+                var version = versions[i];
+                txt += "<tr><td>" + version.getAttribute('v') + " " + version.getAttribute('codeName') + "</td><td>";
+                
+                adds = version.getElementsByTagName("add");
+                txt += "<ul>";
+                for( i = 0; i < adds.length; i++) {
+                txt += "<li>" + adds[i].firstChild.nodeValue + "</li>";
+                }
+                txt += "</ul>";
+                
+                removes = version.getElementsByTagName("remove");
+                txt += "<ul>";
+                for( i = 0; i < removes.length; i++) {
+                txt += "<li>" + removes[i].firstChild.nodeValue + "</li>";
+                }
+                txt += "</ul>";
+                
+                changes = version.getElementsByTagName("change");
+                txt += "<ul>";
+                for( i = 0; i < changes.length; i++) {
+                txt += "<li>" + changes[i].firstChild.nodeValue + "</li>";
+                }
+                txt += "</ul>";
+                
+                fixes = version.getElementsByTagName("fix");
+                txt += "<ul>";
+                for( i = 0; i < fixes.length; i++) {
+                txt += "<li>" + fixes[i].firstChild.nodeValue + "</li>";
+                }
+                txt += "</ul></td></tr>";
+                
+            }
+        txt +="</table>";   
+                document.write(txt);
+        }
+            
+    }
+    xmlhttp.open("GET","versions.xml",true);
+    xmlhttp.send();
+    </script>
+
+</body>
+
+</html>

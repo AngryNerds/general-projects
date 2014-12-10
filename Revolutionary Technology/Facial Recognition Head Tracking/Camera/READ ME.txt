@@ -1,0 +1,3 @@
+NOTE TO CODE TESTERS:
+the code in this folder will only work if you open it with the latest test version of Opera, available at:
+http://dev.opera.com/articles/view/labs-more-fun-using-the-web-with-getusermedia-and-native-pages/

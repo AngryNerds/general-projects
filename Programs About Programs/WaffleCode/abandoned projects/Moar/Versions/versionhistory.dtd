@@ -1,0 +1,11 @@
+<!ELEMENT version history (version*)>
+
+<!ELEMENT version (add*, remove*, change*, fix*)>
+<!ATTLIST version v CDATA #REQUIRED>
+<!ATTLIST version codename CDATA>
+<!ATTLIST version date CDATA>
+
+<!ELEMENT add (#CDATA)>
+<!ELEMENT remove (#CDATA)>
+<!ELEMENT change (#CDATA)>
+<!ELEMENT fix (#CDATA)>

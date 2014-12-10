@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Time-Traveling Guava</title>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
+        <meta charset="utf-8">
+            
+            <style type="text/css">
+                canvas {
+                    margin: 0px;
+                    background-color: #000;
+                    
+                    position: absolute;
+                    top: 0px;
+                    right: 0px;
+                }
+                </style>
+            <script type="text/javascript" charset="utf-8" src="phonegap-1.3.0.js"></script>
+            
+            <script type="text/javascript" src="js/structure.js"></script>
+            
+            <script type="text/javascript">
+                
+                // If you want to prevent dragging, uncomment this section
+                function preventBehavior(e) 
+                {
+                    e.preventDefault(); 
+                };
+                document.addEventListener("touchmove", preventBehavior, false);
+                
+                function onBodyLoad()
+                {		
+                    document.addEventListener("deviceready", begin, false);
+                }
+                </script>
+            </head>
+    <body onload="onBodyLoad()">
+        
+        <canvas id="mainCanvas">
+            Your browser does not support <code>canvas</code>.
+        </canvas>
+        
+        <script type="text/javascript">
+            var canvas = document.getElementById("mainCanvas");
+            var ctx = canvas.getContext("2d");
+            
+            var towers = [];
+            towers.push(new Tower());
+            towers.push(new Tower());
+            
+            function updateGame() {
+                clear();
+                /*for(var i=0; i<towers.length; i++) {
+                    var tow = towers[i];
+                    tow.move();
+                    tow.draw(ctx);
+                    tow.place();
+                }
+                towers[0].laser.fireAt(towers[1]);*/
+                
+                ctx.beginPath();
+                ctx.strokeStyle = "#FFF";
+                for(var x=0; x<GRID_WIDTH; x++) {
+                    ctx.moveTo(x*GRID_SIZE, 0);
+                    ctx.lineTO(x*GRID_SIZE, canvas.height);
+                }
+                for(var y=0; y<GRID_WIDTH; y++) {
+                    ctx.moveTo(y*GRID_SIZE, 0);
+                    ctx.lineTO(y*GRID_SIZE, canvas.width);
+                }
+                ctx.stroke();
+                
+                setTimeout(updateGame, 1000/FPS);
+            }
+            
+            function begin() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+                
+                towers[0].x = 40;
+                towers[0].y = 40;
+                towers[0].vy = 12;
+                
+                towers[1].x = 126;
+                towers[1].y = 102;
+                
+                updateGame();
+            }
+            
+            function clear() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+            }
+            
+            </script>
+        
+    </body>
+</html>

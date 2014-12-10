@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE versionhistory SYSTEM "versionhistory.dtd">
+<versionhistory>
+
+
+
+<version v="0.0.1" codename="Hot Dog">
+<add>stuff</add>
+<add>stuff2</add>
+<add>stuff3</add>
+
+<remove>other stuff</remove>
+
+<change>blah></change>
+<change>blah2</change>
+
+<fix>infinity</fix>
+<fix>test</fix>
+<fix>hi</fix>
+</version>
+    
+<version v="0.0.2" codename="Hot Dog2">
+    <add>stuff</add>
+    <add>stuff2</add>
+    <add>stuff3</add>
+    
+    <remove>other stuff</remove>
+    
+    <change>blah></change>
+    <change>blah2</change>
+    
+    <fix>infinity</fix>
+    <fix>test</fix>
+    <fix>hi</fix>
+</version>
+
+
+
+</versionhistory>

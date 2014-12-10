@@ -1,0 +1,231 @@
+body {
+
+  font-family: sans-serif;
+
+  margin-top: 25px;
+  margin-left: 10%;
+  margin-right: 10%;
+  -moz-background-size: 1px 260px;
+ /* Firefox 3.6 */
+
+  background-size: 1px 260px;
+
+  background: #FFF url('gradient.png') repeat-x right top;
+
+}
+
+
+
+
+a:link {
+
+  color: #367588;
+
+  text-decoration: underline;
+
+}
+
+
+
+a:hover {
+
+  text-decoration: none;
+
+}
+
+
+
+a:visited {
+
+  color: #367588;
+
+  text-decoration: underline;
+
+}
+
+
+
+h1, h2, h3 {
+
+  font-family: "Century Gothic", sans-serif;
+
+}
+
+
+p.warning {
+  padding: 5px;
+  margin: 5px;
+  width: 200px;
+  border: thick red outset;
+  background-color: rgb(225, 0, 0);
+  float: right;
+}
+
+.button {
+    font-weight: bold;
+    border-width: 3px;
+    border-color: #1E90EF;
+    border-style: outset;
+    padding: 5px;
+    background-color: #4169E1;
+    text-decoration: none;
+    margin: 5px;
+}
+
+.button:hover {
+    background-color: #6495ED;
+    cursor: pointer;
+}
+
+.button:active {
+    border-style: inset;
+    cursor: pointer;
+}
+
+
+#wrapper {
+
+  padding-top: 20px;
+
+}
+
+
+
+#navigation {
+
+  display: block;
+
+}
+
+
+#navigation ul {
+
+  list-style-type: none;
+
+  font-size: 1.4em;
+
+}
+
+
+
+#navigation li {
+
+  padding: 5px;
+
+  padding-right: 8px;
+
+  display: block;
+
+  float: left;
+
+}
+
+
+
+#navigation li a:link {
+
+  text-decoration: none;
+
+  font-size: 1.25em;
+
+  font-weight: bold;
+
+  color: #000;
+
+  
+position: relative;
+
+  bottom: 0;
+
+  transition: color 0.3s, bottom 0.3s;
+
+  -webkit-transition: color 0.3s, bottom 0.3s;
+
+  -moz-transition: color 0.3s, bottom 0.3s;
+
+  -o-transition: color 0.3s, bottom 0.3s;
+
+}
+
+#navigation li span {
+  color: #333;
+  font-weight: bold;
+  font-size: 1.25em;
+  padding-bottom: 2px;
+  border-bottom: 2px black solid;
+}
+
+
+
+#navigation li a:visited {
+
+  color: #000;
+
+}
+
+
+
+#navigation li a:hover {
+
+  color: #009ACD;
+
+  bottom: 4px;
+
+}
+
+
+
+#navigation li a:after, #navigation li span:after {
+  content: ".";
+}
+
+
+#logo  {
+  float: left;
+  user-select: none
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  -ms-user-select: none;
+}
+
+
+#logo a:link {
+  opacity: 0.4;
+  filter: alpha(opacity=40);
+  transition: opacity 0.2s;
+  -webkit-transition: opacity 0.2s;
+  -moz-transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
+}
+
+
+#logo a:hover {
+  opacity: 1.0;
+  filter: alpha(opacity=100);
+}
+
+
+#content-wrapper {
+  padding: 4%;
+  padding-top: 15%;
+  padding-bottom: 5px;
+  min-height: 250px;
+  display: block;
+}
+
+
+footer {
+  padding: 5px;
+}
+
+
+#footer-content {
+  font-size: 0.9em;
+  text-align: center;
+}
+
+
+table#projectdata {
+  
+}

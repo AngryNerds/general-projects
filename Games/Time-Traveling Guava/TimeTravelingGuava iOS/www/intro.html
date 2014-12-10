@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Time-Traveling Guava</title>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
+        <meta charset="utf-8">
+            
+            <link href="default.css" type="text/css" rel="stylsheet" />
+            
+            <style type="text/css">
+                body {
+                    font-size: x-large;
+                    font-family: "Century Gothic", sans-serif;
+                    color: #FFF;
+                    background-color: #333;
+                }
+                
+                #letter {
+                    /* background-image: url('paper.png'); */
+                    background-color: #fff;
+                    color: #000;
+                    font-size: 0.8em;
+                    font-family: "American Typewriter", monospace, serif;
+                    
+                    margin-left:auto;
+                    margin-right:auto;
+                    width: 70%;
+                }
+                
+                #letter {
+                    padding: 10px;
+                }
+                
+                #letter > p {
+                    
+                }
+                
+                #topSecret {
+                    font-family: "Cracked", sans-serif;
+                    font-weight: bold;
+                    font-size: 2.5em;
+                    color:red;
+                    padding: 8px;
+                    border: 7px solid red;
+                    transform: rotate(30deg);
+                    -ms-transform: rotate(30deg); /* IE 9 */
+                    -webkit-transform: rotate(30deg); /* Safari and Chrome */
+                    -o-transform: rotate(30deg); /* Opera */
+                    -moz-transform: rotate(30deg); /* Firefox */
+                }
+                
+                #skipIntro {
+                    font-family: sans-serif;
+                    font-size: 0.8em;
+                    color: #8DEEEE;
+                    
+                    position: absolute;
+                    top: 3%;
+                    right: 3%;
+                }
+                
+                #skipIntro:active {
+                    color: #FFF;
+                }
+                
+                #choice {
+                    padding: 10px;
+                    background-color: #EEE;
+                    text-align: middle;
+                    border-radius: 10px;
+                    -moz-border-radius: 10px;
+                    
+                    width: 70%;
+                    margin-left:auto;
+                    margin-right:auto;
+                    
+                    margin-top: 15px;
+                }
+                
+                #choice h2 {
+                    color: black;
+                }
+                
+                #choice a,button {
+                    background-color: #FFF;
+                    color: black;
+                    padding: 5px;
+                    font-weight: bold;
+                    font-size: 1.2em;
+                }
+                </style>
+            
+            <!-- iPad/iPhone specific css below, add after your main css >
+             <link rel="stylesheet" media="only screen and (max-device-width: 1024px)" href="ipad.css" type="text/css" />		
+             <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="iphone.css" type="text/css" />		
+             -->
+            <!-- If your application is targeting iOS BEFORE 4.0 you MUST put json2.js from http://www.JSON.org/json2.js into your www directory and include it here -->
+            <script type="text/javascript" charset="utf-8" src="phonegap-1.3.0.js"></script>
+            <script type="text/javascript">
+                
+                function onBodyLoad()
+                {		
+                    document.addEventListener("deviceready", onDeviceReady, false);
+                }
+                
+                /*
+                 function talk(speechBubblesSoFar) {
+                 var yourSpeechBubble = document.getElementById("yourSpeechBubble");
+                 var bossSpeechBubble = document.getElementById("bossSpeechBubble");
+                 
+                 if(dialogue[speechBubblesSoFar].startsWith("You:") {
+                 yourSpeechBubble.innerHTML = dialogue[speechBubblesSoFar].replace("You:","");
+                 }
+                 else if(dialogue[speechBubblesSoFar].startsWith("Boss:") {
+                 bossSpeechBubble.innerHTML = dialogue[speechBubblesSoFar].replace("You:","");
+                 }
+                 
+                 speechBubblesSoFar++;
+                 
+                 if(speechBubblesSoFar >= dialogue.length) {
+                 setTimeout("talk(s)".replace("s",speechBubblesSoFar+1), 3000);
+                 }
+                 }
+                 */
+                
+                /* When this function is called, PhoneGap has been initialized and is ready to roll */
+                /* If you are supporting your own protocol, the var invokeString will contain any arguments to the app launch.
+                 see http://iphonedevelopertips.com/cocoa/launching-your-own-application-via-a-custom-url-scheme.html
+                 for more details -jm */
+                function onDeviceReady()
+                {
+                    /*
+                     document.addEventListener("touchmove", preventBehavior, false);
+                     
+                     var yourSpeechBubble = document.getElementById("yourSpeechBubble");
+                     var bossSpeechBubble = document.getElementById("bossSpeechBubble");
+                     
+                     var dialogue = new Array();
+                     dialoge.push("You:Sir, you wanted to see me?");
+                     dialoge.push("Boss:Yes. What I am about to tell you is highly top secret–");
+                     dialoge.push("You:Isn\'t that a little redundant? \'Highly top secret,\' I mean?");
+                     dialoge.push("Boss:Whatever. You see, the US Government found a time-traveling guava.");
+                     dialoge.push("You:Cool...");
+                     //Add and edit dialogue (right now, it's very bad :P)
+                     
+                     var now = new Date();
+                     var skip = false;
+                     
+                     for(var i=0; i<dialogue.length; i++) {
+                     if(dialogue[i].startsWith("You:") {
+                     yourSpeechBubble.innerHTML = dialogue[i].replace("You:","");
+                     }
+                     else if(dialogue[i].startsWith("Boss:") {
+                     yourSpeechBubble.innerHTML = dialogue[i].replace("Boss:","");
+                     }
+                     navigator.notification.alert(dialogue[i]);
+                     
+                     var then = now.getTime();
+                     while(then+3000 > now.getTime() && skip==false) {
+                     //wait for it....
+                     }
+                     skip = false;
+                     }*/
+                    //Can't fix this weird glitch, for now we'll use a simpler introduction.
+                }
+                
+                function decline() {
+                    document.body.innerHTML = "Nothing else happens.<br />";
+                    document.body.innerHTML += '<a href="index.html">Start Over</a>';
+                }
+                
+                function accept() {
+                    window.localStorage.setItem('beginner', false);
+                }
+                
+                </script>
+            </head>
+    <body onload="onBodyLoad()">
+        
+        <a href="game.html" id="skipIntro">[skip intro]</a>
+        
+        <div id="letter">
+            <span id="topSecret">TOP SECRET</span>
+            <p style="bottom-margin: 15px;">
+            From: Agent X.<br />
+            To: Dr. J. Smith, Ph.D.
+            </p>
+            <p>
+            Fiften days ago, the US Government began to receive a strange pattern of recurring 
+            low alpha frequency burts, unlike anything we'd ever seen before. We tracked the frequency 
+            back to its point of origin, and found a guava.<br />
+            </p>
+            <p>
+            Yes, a guava. The fruit.
+            </p>
+            <p>
+            As you can imagine, we were quite perplexed, so we took the guava in for analysis. We 
+            had some of our top scientists examine it, and came up with nothing. However, two days ago, 
+            a young quantum physicist had the idea of observing its quantum wave function. We were all shocked to see his
+            findings: a recurring, non-intrinsic anomaly distribution. Being a quantum physicist yourself, 
+            you must realize the shocking implications of the aforementioned observation:
+            </p>
+            <p>
+            We have discovered a time-traveling guava.
+            </p>
+            <p>
+            We have no idea where it came from, or why anyone would give a guava time-traveling abilities, 
+            but we decided to take advantage of this incredible stroke of luck.
+            </p>
+            <p>
+            You see, any sort of time-traveling entity would have an enormous amount of temporal energy, the 
+            unbridled power of which, if harnessed correctly, could provide the world with way too much energy. 
+            We decided to fund a top secret project, codenamed "Really Valuable Fruit," in attempt to find some
+            method of channeling the guava's near infinite temporal energy.
+            </p>
+            <p>
+            However, after pouring 16.3 billion dollars into the project, we ended up where we began: with 
+            absolutely nothing. This is where you come in.
+            </p>
+            <p>
+            You see, we are aware that you are one of the top scientists in the world, perhaps the only one who 
+            has any chance of controlling the guava's enormous potential. We request your assistance in doing so, 
+            and strongly advise your utmost obedience, or we shall be forced to increase your annual income tax 
+            rate by 6.7%.
+            </p>
+            <p>
+            We look forward to having you with us, or to thinking of various, trivial ways to torment you in your 
+            daily life, a pursuit which brings us great enjoyment.
+            </p>
+            <p>
+            Best Regards,
+            Agent X
+            US Government
+            </p>
+            <p>
+            P.S. This message will self-destruct in 10 seconds.
+            (Unless our intern forgot to put the explosives in the letter again, whcih would be really annoying.)
+            </p>
+        </div>
+        
+        <div id="choice">
+            <h2>What do you want to do?</h2>
+            <button onclick="decline()">Decline</button>
+            <a onclick="accept()" href="game.html">Accept</a>
+        </div>
+        
+    </body>
+</html>

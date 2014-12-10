@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<style type='text/css'>
+textarea {
+font-family: monospace;
+}
+</style>
+</head>
+<body>
+
+<textarea id="codingArea">
+&lt;html&rt;
+</textarea>
+
+<button id="runButton">Run</button>
+
+<iframe id="runArea"></iframe>
+
+<script>
+var socket = io.connect('http://localhost');
+
+function run() {
+code = document.getElementById("codingArea").value;
+frame = document.getElementById("runArea");
+frame.srcdoc = code;
+}
+
+document.getElementById("runButton").onclick = run;
+</script>
+</body>
+</html>
